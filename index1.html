@@ -656,12 +656,233 @@
       font-size: 0.94rem;
       line-height: 1.6;
     }
+    
+    .site-footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid rgba(18, 28, 45, 0.08);
+      margin-top: 48px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .footer-mark {
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-brand p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(18, 28, 45, 0.08);
+      box-shadow: var(--shadow-soft);
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .footer-icon:hover {
+      transform: translateY(-1px);
+      border-color: rgba(74, 132, 255, 0.28);
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .footer-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: #121c2d;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 720px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
 
     .section-anchor {
       position: relative;
       top: -110px;
     }
+    
+.cred-ribbon-section {
+  padding: 18px 0 30px;
+}
 
+.cred-ribbon-head {
+  margin-bottom: 16px;
+}
+
+.cred-ribbon-head h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3.2vw, 3rem);
+  letter-spacing: -0.04em;
+  max-width: 14ch;
+}
+
+.cred-ribbon {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-radius: 999px;
+  padding: 18px 10px 10px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(244,247,255,0.92));
+  border: 1px solid rgba(18, 28, 45, 0.08);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.cred-ribbon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(74,132,255,0.10), transparent 24%),
+    radial-gradient(circle at 100% 0%, rgba(109,99,255,0.10), transparent 28%);
+  pointer-events: none;
+}
+
+.cred-ribbon-badge {
+  position: absolute;
+  top: 0;
+  left: 22px;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(74,132,255,0.98), rgba(109,99,255,0.98));
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 24px rgba(93, 96, 255, 0.20);
+  z-index: 1;
+}
+
+.cred-ribbon-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 22px;
+  min-height: 104px;
+}
+
+.cred-ribbon-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  right: 0;
+  width: 1px;
+  height: 64%;
+  background: linear-gradient(
+    180deg,
+    rgba(18,28,45,0),
+    rgba(18,28,45,0.10),
+    rgba(18,28,45,0)
+  );
+}
+
+.cred-logo {
+  height: 72px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.cred-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cred-name {
+  font-size: 1.28rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.cred-meta span {
+  margin-top: 4px;
+  color: var(--muted-2);
+  font-size: 0.84rem;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.cred-ribbon-note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  max-width: 74ch;
+}
+
+@media (max-width: 960px) {
+  .cred-ribbon {
+    grid-template-columns: 1fr;
+    border-radius: 28px;
+    padding-top: 24px;
+  }
+
+  .cred-ribbon-item {
+    justify-content: flex-start;
+    min-height: auto;
+    padding: 18px 18px;
+  }
+
+  .cred-ribbon-item:not(:last-child)::after {
+    top: auto;
+    bottom: 0;
+    left: 18px;
+    right: 18px;
+    width: auto;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(18,28,45,0),
+      rgba(18,28,45,0.10),
+      rgba(18,28,45,0)
+    );
+  }
+
+  .cred-meta span {
+    white-space: normal;
+  }
+}
     @media (max-width: 1100px) {
       .hero-grid,
       .manifesto-grid,
@@ -962,8 +1183,8 @@
             </article>
 
             <aside class="side-panel">
-              <span class="label">Research services</span>
-              <h3>How we can help right now</h3>
+              <span class="label">Research</span>
+              <h3>Current focus</h3>
               <ul>
                 <li>Reasoning and agent evaluation frameworks for research and product teams</li>
                 <li>Prototype design for grounded, tool-using, or safety-aware AI systems</li>
@@ -1059,7 +1280,7 @@
           <div class="section-head">
             <div>
               <div class="kicker">People</div>
-              <h2>Built by someone who moves between theory and systems.</h2>
+              <h2>From first principles to working systems.</h2>
             </div>
             <p>
               The lab’s first chapter is deeply shaped by the founder’s trajectory: from scientific training and large-scale engineering to research on reasoning,
@@ -1081,7 +1302,7 @@
             <article class="card">
               <h3>Aliaksei Kaliutau</h3>
               <p>
-                Aliaksei’s path bridges frontier research and ambitious engineering. He first stood out at 17, winning a national technology competition for designing a neuroprocessor on FPGA. With a foundation in Physics and Informatics and an MSc in AI from Imperial College London, he has focused his work on one central challenge: making machine intelligence more reliable. He has built research software for reasoning evaluation, engineered large-scale AI and robotics infrastructure, designed advanced reasoning and tool-use tasks for frontier models, and founded Monodromy at I-X, Imperial College London.
+                Aliaksei’s path bridges <a href="https://akaliutau.github.io/">frontier research </a> and ambitious engineering. He first stood out at 17, winning a national technology competition for designing a neuroprocessor on FPGA. With a foundation in Physics and Informatics and an MSc in AI from Imperial College London, he has focused his work on one central challenge: making machine intelligence more reliable. He has built research software for reasoning evaluation, engineered large-scale AI and robotics infrastructure, designed advanced reasoning and tool-use tasks for frontier models, and founded Monodromy at I-X, Imperial College London.
               </p>
               <p>
                 That arc matters for Monodromy. The lab is not built from theory alone and not from product intuition alone. It is built from repeated attempts to turn ambitious ideas into trustworthy systems, to make AI useful in reseach and industry.
@@ -1096,6 +1317,47 @@
           </div>
         </div>
       </section>
+      
+      <!-- institutional ribbon -->
+<section class="cred-ribbon-section" aria-labelledby="cred-ribbon-title">
+  <div class="container">
+    <div class="cred-ribbon-head">
+      <h2 id="cred-ribbon-title">Built where the bar is unusually high.</h2>
+    </div>
+
+    <div class="cred-ribbon" role="list" aria-label="Institutional lineage">
+
+      <article class="cred-ribbon-item" role="article">
+        <img src="assets/imperial_logo_600.png" alt="Imperial College London logo" class="cred-logo" />
+        <div class="cred-meta">
+          <div class="cred-name">Imperial</div>
+          <span>Global science institution</span>
+        </div>
+      </article>
+
+      <article class="cred-ribbon-item" role="article">
+        <img src="assets/ocado_logo_200.png" alt="Ocado Technology logo" class="cred-logo" />
+        <div class="cred-meta">
+          <div class="cred-name">Ocado Tech</div>
+          <span>Advanced robotics at scale</span>
+        </div>
+      </article>
+
+      <article class="cred-ribbon-item" role="article">
+        <img src="assets/ix_logo_300.png" alt="I-X logo" class="cred-logo" />
+        <div class="cred-meta">
+          <div class="cred-name">I-X</div>
+          <span>Frontier AI research environment</span>
+        </div>
+      </article>
+    </div>
+
+    <p class="cred-ribbon-note">
+      Depth across top-tier science, real-world robotics, and advanced AI research.
+      That is why the lab’s work is research-led, not trend-led.
+    </p>
+  </div>
+</section>
 
       <span id="contact" class="section-anchor"></span>
       <section>
@@ -1103,11 +1365,10 @@
           <div class="section-head">
             <div>
               <div class="kicker">Contact</div>
-              <h2>Looking for a research partner?</h2>
+              <h2>Join us to shape the next generation of intelligence</h2>
             </div>
             <p>
-              We are currently interested in research collaborations, advisory work, experimental system design,
-              and projects that take reliable intelligence seriously.
+              We are currently interested in research and industry collaborations, and projects that take reliable intelligence seriously.
             </p>
           </div>
 
@@ -1139,17 +1400,37 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container footer-shell">
-        <p>
-          Monodromy Labs is the public research identity of Monodromy, LTD.<br />
-        </p>
-        <p>
-          Monodromy, LTD is a registered company in the UK
-        </p>
-        <p>
-          (c) 2026 Monodromy, LTD
-        </p>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <div class="footer-mark">Monodromy Labs is the public research identity of Monodromy, LTD.</div>
+          <p>Research-led AI systems.</p>
+          <p>&copy; 2026 Monodromy, LTD</p>
+        </div>
+
+        <div class="footer-links" aria-label="Social and contact links">
+          <a
+            href="https://www.linkedin.com/company/monodromy"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="footer-icon"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.96 1.96 0 1 0 5.3 6.9 1.96 1.96 0 0 0 5.25 3ZM20.44 12.48c0-3.46-1.85-5.07-4.32-5.07-1.99 0-2.88 1.09-3.38 1.86V8.5H9.36c.04.51 0 11.5 0 11.5h3.38v-6.42c0-.34.03-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.37 0 1.92 1.04 1.92 2.57V20h3.38v-7.52Z"/>
+            </svg>
+          </a>
+
+          <a
+            href="mailto:hello@monodromylabs.com"
+            aria-label="Email"
+            class="footer-icon"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Zm2.2.3 6.8 5.4 6.8-5.4H5.2Zm13.8 2.22-6.37 5.05a1 1 0 0 1-1.26 0L5 8.02V18.5c0 .28.22.5.5.5h13a.5.5 0 0 0 .5-.5V8.02Z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </footer>
   </div>
